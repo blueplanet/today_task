@@ -10,6 +10,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 
 gem 'jquery-turbolinks'
+gem 'bootstrap-sass'
 
 group :development, :test do
   gem 'byebug'
