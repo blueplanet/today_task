@@ -1,11 +1,8 @@
-angular.module('TodayTaskApp').controller "TodayTasksCtrl", ($scope) ->
+angular.module('TodayTaskApp').controller "TodayTasksCtrl", ($scope, Task) ->
 
   $scope.init = ->
-    $scope.tasks = [
-      { 'name': 'task1', completed: false },
-      { 'name': 'task2', completed: false },
-      { 'name': 'task3', completed: false }
-    ]
+    @taskService = new Task()
+    $scope.tasks = @taskService.find()
 
   $scope.addTask = (taskName) ->
     task = { 'name': taskName }
