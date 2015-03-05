@@ -1,4 +1,4 @@
-app = angular.module('TodayTaskApp', ['ui.bootstrap'])
+app = angular.module('TodayTaskApp', ['ui.bootstrap', 'ngResource'])
 
 app.config ($httpProvider) ->
   authToken = $("meta[name=\"csrf-token\"]").attr("content")

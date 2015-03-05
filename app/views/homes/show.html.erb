@@ -18,7 +18,7 @@
         <li class="list-group-item" ng-repeat="task in tasks" ng-class="{completed: task.completed}">
           <span class="task-completed pull-left">
             <label>
-              <input type="checkbox" ng-model="task.completed">
+              <input type="checkbox" ng-model="task.completed" ng-click="toggleTask(task)">
             </label>
           </span>
           <div class="pull-left">

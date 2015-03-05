@@ -1,18 +1,21 @@
-angular.module('TodayTaskApp').controller "TodayTasksCtrl", ($scope) ->
+angular.module('TodayTaskApp').controller "TodayTasksCtrl", ($scope, Task) ->
 
   $scope.init = ->
-    $scope.tasks = [
-      { 'name': 'task1', completed: false },
-      { 'name': 'task2', completed: false },
-      { 'name': 'task3', completed: false }
-    ]
+    @taskService = new Task(serverErrorHandler)
+    $scope.tasks = @taskService.find()
 
   $scope.addTask = (taskName) ->
-    task = { 'name': taskName }
-
+    task = @taskService.create(name: taskName, completed: false)
     $scope.tasks.unshift(task)
 
     $scope.taskName = ''
 
+  $scope.toggleTask = (task) ->
+    @taskService.update(task, completed: task.completed)
+
   $scope.deleteTask = (task) ->
+    @taskService.delete(task)
     $scope.tasks.splice($scope.tasks.indexOf(task), 1)
+
+  serverErrorHandler = ->
+    alert("サーバーでエラーが発生しました。画面を更新し、もう一度試してください。")
