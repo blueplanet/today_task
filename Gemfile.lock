@@ -37,6 +37,10 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.0)
+    better_errors (2.1.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+      rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.1.0)
@@ -46,6 +50,7 @@ GEM
       columnize (~> 0.8)
       debugger-linecache (~> 1.2)
       slop (~> 3.6)
+    coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -61,6 +66,10 @@ GEM
     globalid (0.3.3)
       activesupport (>= 4.1.0)
     hike (1.2.3)
+    hirb (0.7.2)
+    hirb-unicode (0.0.5)
+      hirb (~> 0.5)
+      unicode-display_width (~> 0.1.1)
     i18n (0.7.0)
     jbuilder (2.2.9)
       activesupport (>= 3.0.0, < 5)
@@ -77,12 +86,28 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    method_source (0.8.2)
     mime-types (2.4.3)
     mini_portile (0.6.2)
     minitest (5.5.1)
     multi_json (1.10.1)
+    newrelic_rpm (3.9.8.273)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
+    pg (0.17.1)
+    pry (0.10.1)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-byebug (2.0.0)
+      byebug (~> 3.4)
+      pry (~> 0.10)
+    pry-rails (0.3.2)
+      pry (>= 0.9.10)
+    puma (2.10.2)
+      rack (>= 1.1, < 2.0)
+    quiet_assets (1.1.0)
+      railties (>= 3.1, < 5.0)
     rack (1.6.0)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -105,6 +130,11 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.1)
       loofah (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.3)
+    rails_stdout_logging (0.0.3)
     railties (4.2.0)
       actionpack (= 4.2.0)
       activesupport (= 4.2.0)
@@ -144,6 +174,7 @@ GEM
     uglifier (2.7.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unicode-display_width (0.1.1)
     web-console (2.1.0)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
@@ -154,13 +185,24 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  better_errors
+  binding_of_caller
   bootstrap-sass
   byebug
   coffee-rails (~> 4.1.0)
+  hirb
+  hirb-unicode
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
+  newrelic_rpm
+  pg
+  pry-byebug
+  pry-rails
+  puma
+  quiet_assets
   rails (= 4.2.0)
+  rails_12factor
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
